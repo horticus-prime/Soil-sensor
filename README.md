@@ -8,7 +8,17 @@ DevStation, Apprenti, CodeFellows 401 midterm project by
 * Michael Chapman
 
 ## Description of Project
-Water conservation and increasing garden productivity through data collection and data analytics.
+In order to increase gardening productivity and to conserve water resources, we have decided to remotely monitor moisture content of soil over time. We will utilize a Raspberry Pi in conjunction with a Grove Moisture Sensor achieve this. The Raspberry Pi will collect moisture sensor data via a direct connection and post at regular intervals to Heroku via a network connection.  We have not yet decided what interval at which the data will be posted. The Heroku server will store the collected data in a MongoDB. We will access the database through a simple font-end that displays the data in a simple fashion. It is possible that we may incorporate a visual representation of the data over time. 
+
+We plan on implementing authorization of users and associated capabilities including protecting CRUD routes. 
+
+Technologies we will be using: VSCode, Trello, Github, git, Node.js, Express, Raspberry Pi, a Grove Moisture Sensor, and third-party libraries as necessary. 
+
+In the future, when the moisture drops below and/or about  a certain defined threshold, the app will send a message to the user. 
+
+Another possible future feature will incorporate a weather API that will alter the amount of water and/or when to water the plant. 
+
+We will design the system for sensor scalability which could include but are not limited to additional moisture sensors, temperature, humidity and sun-light sensors.
 
 ## Version 1.0.0
 
