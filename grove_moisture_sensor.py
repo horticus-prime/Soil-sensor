@@ -33,6 +33,9 @@ Grove = GroveMoistureSensor
 
 sio = socketio.Client()
 
+#Socket io info
+
+
 @sio.event
 def disconnect():
     print('disconnected from server')
@@ -41,7 +44,7 @@ def disconnect():
 def connect():
     print('connection established')
 
-
+sio.connect('https://calm-river-80577.herokuapp.com/')
 
 def main():
     from grove.helper import SlotHelper
@@ -49,20 +52,21 @@ def main():
     pin = sh.argv2pin()
 
     sensor = GroveMoistureSensor(pin)
-    #Socket io info
-    sio.connect('http://localhost:3001')
 
     print('Detecting moisture...')
     while True:
         m = sensor.moisture
         if 0 <= m and m < 300:
+            print(m)
             result = 'Dry'
         elif 300 <= m and m < 600:
+            print(m)
             result = 'Moist'
         else:
+            print(m)
             result = 'Wet'
         print('Moisture value: {0}, {1}'.format(m, result))
-        sio.send(json.dumps({'%d' % m: '%s' % result}))
+        sio.emit('moisture-data', json.dumps({'%d' % m: '%s' % result}))
 
         time.sleep(1)
 
