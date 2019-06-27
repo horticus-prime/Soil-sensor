@@ -66,7 +66,9 @@ def main():
             print(m)
             result = 'Wet'
         print('Moisture value: {0}, {1}'.format(m, result))
-        sio.emit('moisture-data', json.dumps({'%d' % m: '%s' % result}))
+        
+        sio.emit('moisture-data', json.dumps({'val' : '%d' % m , 'category' : '%s' % result}))
+
 
         time.sleep(1)
 
