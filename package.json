@@ -24,7 +24,7 @@
   "homepage": "https://github.com/horticus-prime/Soil-sensor#readme",
   "dependencies": {
     "eslint": "^6.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-swagger-generator": "^1.1.15",
     "jest": "^24.8.0",
     "jsdoc": "^3.6.2",
